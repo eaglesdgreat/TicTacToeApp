@@ -15,16 +15,16 @@ gulp.task('clean', function () {
 });
 
 gulp.task('default', function (done) {
-    gulp.src(nodeRoot + "bootstrap/dist/js/*").pipe(gulp.dest(targetPath + "/bootstrap/dist/js"));
-    gulp.src(nodeRoot + "bootstrap/dist/css/*").pipe(gulp.dest(targetPath + "/bootstrap/dist/css"));
-    gulp.src(nodeRoot + "bootstrap/dist/fonts/*").pipe(gulp.dest(targetPath + "/bootstrap/dist/fonts"));
+    gulp.src(nodeRoot + "bootstrap/dist/js/bootstrap.min.js").pipe(gulp.dest(targetPath + "/bootstrap/dist/js"));
+    gulp.src(nodeRoot + "bootstrap/dist/css/bootstrap.min.css").pipe(gulp.dest(targetPath + "/bootstrap/dist/css"));
+    //gulp.src(nodeRoot + "bootstrap/dist/fonts/*").pipe(gulp.dest(targetPath + "/bootstrap/dist/fonts"));
 
     gulp.src(nodeRoot + "jquery/dist/jquery.js").pipe(gulp.dest(targetPath + "/jquery/dist"));
     gulp.src(nodeRoot + "jquery/dist/jquery.min.js").pipe(gulp.dest(targetPath + "/jquery/dist"));
     gulp.src(nodeRoot + "jquery/dist/jquery.min.map").pipe(gulp.dest(targetPath + "/jquery/dist"));
 
-    gulp.src(nodeRoot + "jquery-validation/dist/*.js").pipe(gulp.dest(targetPath + "/jquery-validation/dist"));
+    gulp.src(nodeRoot + "jquery-validation/dist/validation.min.js").pipe(gulp.dest(targetPath + "/jquery-validation/dist"));
 
-    gulp.src(nodeRoot + "jquery-validation-unobtrusive/dist/*.js").pipe(gulp.dest(targetPath + "/jquery-validation-unobtrusive"));
+    gulp.src(nodeRoot + "jquery-validation-unobtrusive/dist/validation.unobtrusive.min.js").pipe(gulp.dest(targetPath + "/jquery-validation-unobtrusive"));
     done();
 });

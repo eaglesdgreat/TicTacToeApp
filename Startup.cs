@@ -16,6 +16,7 @@ namespace TicTacToeApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<Services.IUserService, Services.UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
