@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using TicTacToeApp.Extensions;
 
 namespace TicTacToeApp
 {
@@ -17,6 +18,7 @@ namespace TicTacToeApp
         {
             services.AddMvc();
             services.AddSingleton<Services.IUserService, Services.UserService>();
+            services.AddRouting();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +35,7 @@ namespace TicTacToeApp
 
             app.UseStaticFiles();
 
+            app.UseCommunicationMiddleware();
             app.UseMvc(routes =>
            {
                routes.MapRoute(
